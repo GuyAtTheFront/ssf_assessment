@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <span data-th-text="${pizza}" /> -->
+    <h1>Order Delivery Details</h1>
+    <form action="#" data-th-action="@{/pizza/order}" data-th-object="${confirm}" method="post">
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td> <input type="text" placeholder="Placeholder" data-th-field="*{name}"> </td>
+            </tr>
+            
+            <tr>
+                <td>Address: </td>
+                <td> <input type="text" placeholder="Placeholder" data-th-field="*{address}"> </td>
+            </tr>
+
+            <tr>
+                <td>Phone: </td>
+                <td> <input type="text" placeholder="Placeholder" data-th-field="*{phone}"> </td>
+            </tr>
+
+            <tr>
+                <td>Rush: </td>
+                <td> <input type="checkbox" placeholder="Placeholder" data-th-field="*{rush}"> </td>
+            </tr>
+
+            <tr>
+                <td>Comments: </td>
+                <td> <textarea id="txtArea" rows="3" cols="30" placeholder="Type here" data-th-field="*{comments}"></textarea> </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <button type="reset">Cancel Order</button>
+                    <button type="submit">Place Order</button>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+    <span style="color:red" data-th-errors="${confirm.name}"/> <br>
+    <span style="color:red" data-th-errors="${confirm.address}"/> <br> 
+    <span style="color:red" data-th-errors="${confirm.phone}"/> <br>
+
+</body>
+</html>
